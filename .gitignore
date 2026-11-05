@@ -1,0 +1,15 @@
+# IDE / Editor files
+.idea/
+.vscode/
+*.swp
+*.iml
+
+# Node / Frontend (for when frontend is created)
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# OS Files
+.DS_Store
+Thumbs.db
