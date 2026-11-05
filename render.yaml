@@ -46,7 +46,7 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://student-backend.onrender.com
+        value: https://student-backend-cgwd.onrender.com
 
 databases:
   - name: student-db

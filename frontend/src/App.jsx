@@ -2,8 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const getApiUrl = () => {
-  const base = import.meta.env.VITE_API_BASE_URL || "https://student-backend-cgwd.onrender.com";
-  return `${base.replace(/\/$/, '')}/manansala/students`;
+  let base = import.meta.env.VITE_API_BASE_URL;
+  if (!base || base.includes("student-backend.onrender.com")) {
+    base = "https://student-backend-cgwd.onrender.com";
+  }
+  const cleanBase = base.replace(/\/$/, '');
+  if (cleanBase.endsWith('/manansala/students')) {
+    return cleanBase;
+  }
+  if (cleanBase.endsWith('/manansala')) {
+    return `${cleanBase}/students`;
+  }
+  return `${cleanBase}/manansala/students`;
 };
 
 const API_URL = getApiUrl();
